@@ -1,0 +1,1 @@
+Install CLISP ('sudo apt-get install clisp', or comparable) then run ./blackjack.sh

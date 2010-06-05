@@ -79,7 +79,8 @@
 
 (defun get-live-players ()
   (remove-if #'(lambda (player)
-		 (not (plusp (get-chips player)))) ;;players with non-positive chip counts don't get to play anymore
+		 (and (null (get-hands player))
+		      (not (plusp (get-chips player))))) ;;players with non-positive chip counts don't get to play anymore
 	     (get-players *global-state*)))
 
 (defun get-dealer-hand ()
